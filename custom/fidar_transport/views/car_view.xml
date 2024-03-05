@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+    <record id="view_transport_car_list" model="ir.ui.view">
+        <field name="name">transport.car.list</field>
+        <field name="model">transport.car</field>
+        <field name="arch" type="xml">
+            <tree >
+                <field name="car_tag"/>
+                <field name="car_model"/>
+            </tree>
+        </field>
+    </record>
+    <!-- action view -->
+    <record model="ir.actions.act_window" id="action_window_transport_car">
+    <field name="name">transport window</field>
+    <field name="res_model">transport.car</field>
+    <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Top menu item -->
+    <menuitem name="transport" id="menu_root"/>
+    
+    
+    <menuitem name="Car List" id="transportcar_list" parent="fidar_transport.menu_root"
+    action="fidar_transport.action_window_transport_car"/>
+
+    </data>
+</odoo>
+
+
